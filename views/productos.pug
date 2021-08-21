@@ -1,0 +1,14 @@
+html
+    head 
+        meta(http-equiv="Content-Type", content="text/html;charset=UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Desafio Pug
+    body 
+        h1 Lista de animes:
+        if productos
+            each anime in productos 
+                h2= 'Titulo: ' + anime.title
+                p= 'Personaje principal: ' + anime.mainCharacter
+        else
+            h3 No se encontraron productos
