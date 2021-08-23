@@ -4,11 +4,16 @@ html
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Desafio Pug
+        
     body 
         h1= "Animes!"
-        form(action="/productos" method="POST")
+        a(href="/productos")
+            button Ver animes
+        form(action="/productos" method="POST" id='formulario')
             p Titulo:
             input(type="text" name="title" placeholder="Attack on titan")
             p Personaje principal:
             input(type="text" name="mainCharacter" placeholder="Levi")
+            p Imagen de url:
+            input(type="text" name="imgUrl" placeholder="Insertar un Url de imagen")
             button(type="submit") Submit

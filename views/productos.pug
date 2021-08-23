@@ -4,11 +4,24 @@ html
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Desafio Pug
+        link(rel="stylesheet", href="style.css")
     body 
         h1 Lista de animes:
+        a(href="/")
+            button Agregar anime
         if productos
-            each anime in productos 
-                h2= 'Titulo: ' + anime.title
-                p= 'Personaje principal: ' + anime.mainCharacter
+            table
+                tr 
+                    th Id
+                    th Titulo
+                    th Personaje principal
+                    th Imagen
+                each anime in productos
+                    tr
+                        td= anime.id
+                        td= anime.title
+                        td= anime.mainCharacter
+                        td
+                            img(src=anime.imgUrl, alt=anime.title)
         else
             h3 No se encontraron productos
