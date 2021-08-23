@@ -9,7 +9,9 @@ html
         h1 Lista de animes:
         a(href="/")
             button Agregar anime
-        if productos
+        if productos.length === 0
+            h3 No se encontraron productos
+        else
             table
                 tr 
                     th Id
@@ -23,5 +25,3 @@ html
                         td= anime.mainCharacter
                         td
                             img(src=anime.imgUrl, alt=anime.title)
-        else
-            h3 No se encontraron productos
